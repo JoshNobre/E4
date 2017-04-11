@@ -1,0 +1,16 @@
+<template name="Menu">
+  <h2 class="page-title">Mes préparations</h2>
+  {{#each recettes}}
+      {{> MenuItem}}
+    {{else}}
+        <h3>Ajouter une<a href="/recette-livre">recette</a>dans votre menu </h3>
+  {{/each}}
+</template>
+
+<template name="MenuItem">
+  <div class="menu-item">
+      <h3>{{name}}</h3>
+      <p>{{description}}</p>
+      <iframe class="iframe" src="http://www.marmiton.org/recettes/recherche.aspx?aqt={{name}}" scrolling="no" style="height: 98em; width: 98em;"></iframe>
+  </div>
+</template>
