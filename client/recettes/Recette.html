@@ -19,4 +19,27 @@
         {{/if}}
     {{/if}}
   </article>
+{{> test}}
+</template>
+
+<template name="test">
+<html>
+<body>
+
+
+<script>
+if(typeof(EventSource) !== "undefined") {
+    var source = new EventSource("http://127.0.0.1:8080/sse.js");
+    console.log(source);
+    source.onmessage = function(event) {
+      alert ("toto");
+        document.getElementById("result").innerHTML = event.data + "<br>";
+    };
+} else {
+    document.getElementById("result").innerHTML = "Sorry, your browser does not support server-sent events...";
+}
+</script>
+
+</body>
+</html>
 </template>

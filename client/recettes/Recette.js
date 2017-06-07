@@ -23,7 +23,9 @@ Template.Recette.events({
     template.editMode.set(!template.editMode.get());
   }
 });
-
+// (Pop-up)
+//si il y a une erreur lors de la modification de la recette, la pop up sera rouge avec le message
+//Une erreur est survenue lors de la modification de la recette,le type et nom d'erreur 
 AutoForm.hooks({
   updateRecetteId: {
     onError: function (formType, error){

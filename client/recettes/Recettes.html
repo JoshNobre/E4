@@ -1,4 +1,5 @@
 <template name="Recettes">
+  {{> sAlert}}
   {{#if $.Session.get 'nouvelleRecette'}}
   {{> NouvelleRecette}}
   {{else}}
